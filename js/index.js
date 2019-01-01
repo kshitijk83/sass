@@ -27,3 +27,33 @@ var learn = document.querySelector('.tour');
 learn.addEventListener('click', function(){
     smoothScroll('.section-features', 1000);
 })
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    
+    var controller = new ScrollMagic.Controller();
+    
+    // pin header
+    var pinHeader = new ScrollMagic.Scene({
+        triggerElement: '.header',
+        triggerHook: 0,
+    })
+    .setPin('.header', {pushFollowers: false})
+    .addTo(controller);
+
+    // section-feature scene
+    var secFeatureScene = new ScrollMagic.Scene({
+        triggerElement: '.section-features',
+        triggerHook: 0.8,
+        duration: '90%'
+    })
+    .setClassToggle('.feature-box', 'fade-in')
+    .addIndicators({
+        name: 'fade feature-box',
+        colorTrigger: 'black',
+        colorStart: 'red'
+    })
+    .addTo(controller);
+});

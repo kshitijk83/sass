@@ -1,7 +1,14 @@
+main{
+    position: relative;
+    background: $color-gray-light-2;
+}
+
 .section-about {
     background: $color-gray-light-1;
     padding: 25rem 0;
-    margin-top: -20vh;
+    // margin-top: -20vh;
+    // -webkit-clip-path: polygon(0 25vh, 100% 0, 100% 75vh, 0 100%);
+    // clip-path: polygon(0 25vh, 100% 0, 100% 75vh, 0 100%);
 
     @include respond(tab-port) {
         padding: 20rem 0;
@@ -18,10 +25,10 @@
       url(../img/nat-4.jpg);
     background-size: cover;
 
-    transform: skewY(-7deg);
+    // transform: skewY(-7deg);
 
     &>* {
-        transform: skewY(7deg);
+        // transform: skewY(7deg);
     }
 
     @include respond(tab-port) {
