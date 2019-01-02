@@ -11,13 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
     .setPin('.header', {pushFollowers: false})
     .addTo(controller);
 
-    // section-feature scene
+    // section-feature scenes
+
+    var parallaxTl = new TimelineMax();
+    parallaxTl
+        .from('.feature-box', .5, {autoAlpha:0, ease:Power0.easeNone}, .2)
+        .from('.feature-wrapper', 1, {y:'-20%', ease:Power0.easeNone}, 0);
+
     var secFeatureScene = new ScrollMagic.Scene({
         triggerElement: '.section-features',
-        triggerHook: 0.8,
-        duration: '90%'
+        triggerHook: 1,
+        duration: '150%'
     })
-    .setClassToggle('.feature-box', 'fade-in')
+    .setTween(parallaxTl)
     .addIndicators({
         name: 'fade feature-box',
         colorTrigger: 'black',
@@ -25,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .addTo(controller);
 
-
+    // handling nav links
     var discover = document.querySelector('#discover');
     var about = document.querySelector('#about');
     var features = document.querySelector('#features');
@@ -59,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 });
 
+
+
+
+// function for smooth scrolling
 function smoothScroll(target, duration){
     var target = document.querySelector(target);
     var targetPos = target.getBoundingClientRect().top;
