@@ -319,7 +319,9 @@ body {
   -moz-perspective: 150rem;
   position: relative;
   height: 52rem;
-  font-weight: 900; }
+  font-weight: 900;
+  opacity: 0;
+  transition: opacity 2s ease-in; }
   .card__side {
     font-size: 2rem;
     height: 50rem;
@@ -442,6 +444,9 @@ body {
         margin-bottom: 3rem; }
       .card__price-value {
         font-size: 4rem; } }
+
+.fade-in {
+  opacity: 1; }
 
 .story {
   width: 75%;

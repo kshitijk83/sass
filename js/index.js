@@ -31,6 +31,24 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .addTo(controller);
 
+    // var parallaxTl2 = new TimelineMax();
+    // parallaxTl2
+    //     .from('.card', .5, {autoAlpha:0, ease:Power0.easeNone}, .2)
+        
+
+    var secFeatureScene = new ScrollMagic.Scene({
+        triggerElement: '.section-tours',
+        triggerHook: .8,
+        duration: '150%'
+    })
+    .setClassToggle('.card', 'fade-in')
+    .addIndicators({
+        name: 'fade section-tours',
+        colorTrigger: 'black',
+        colorStart: 'red'
+    })
+    .addTo(controller);
+
     // handling nav links
     var discover = document.querySelector('#discover');
     var about = document.querySelector('#about');
@@ -81,7 +99,6 @@ function smoothScroll(target, duration){
         if(!startTime) startTime = currentTime;
         var timeElapsed = currentTime-startTime;
         var run = ease(timeElapsed, startPos, distance, duration);
-        console.log(run);
         window.scrollTo(0, run);
         if(timeElapsed<duration) {requestAnimationFrame(animation);}
     }
