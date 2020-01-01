@@ -42,11 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         duration: '150%'
     })
     .setClassToggle('.card', 'fade-in')
-    .addIndicators({
-        name: 'fade section-tours',
-        colorTrigger: 'black',
-        colorStart: 'red'
-    })
     .addTo(controller);
 
     // handling nav links
